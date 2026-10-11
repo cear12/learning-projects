@@ -50,8 +50,7 @@ SET default_table_access_method = heap;
 CREATE TABLE public.elements (
     atomic_number integer NOT NULL,
     symbol character varying(2) NOT NULL,
-    name character varying(40) NOT NULL,
-    atomic_mass numeric
+    name character varying(40) NOT NULL
 );
 
 
@@ -65,7 +64,8 @@ CREATE TABLE public.properties (
     atomic_number integer NOT NULL,
     melting_point_celsius numeric NOT NULL,
     boiling_point_celsius numeric NOT NULL,
-    type_id integer NOT NULL
+    type_id integer NOT NULL,
+    atomic_mass numeric
 );
 
 
@@ -87,32 +87,32 @@ ALTER TABLE public.types OWNER TO freecodecamp;
 -- Data for Name: elements; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.elements VALUES (1, 'H', 'Hydrogen', 1.008000);
-INSERT INTO public.elements VALUES (2, 'He', 'Helium', 4.002600);
-INSERT INTO public.elements VALUES (3, 'Li', 'Lithium', 6.940000);
-INSERT INTO public.elements VALUES (4, 'Be', 'Beryllium', 9.012200);
-INSERT INTO public.elements VALUES (5, 'B', 'Boron', 10.810000);
-INSERT INTO public.elements VALUES (6, 'C', 'Carbon', 12.011000);
-INSERT INTO public.elements VALUES (7, 'N', 'Nitrogen', 14.007000);
-INSERT INTO public.elements VALUES (8, 'O', 'Oxygen', 15.999000);
-INSERT INTO public.elements VALUES (9, 'F', 'Fluorine', 18.998);
-INSERT INTO public.elements VALUES (10, 'Ne', 'Neon', 20.18);
+INSERT INTO public.elements VALUES (1, 'H', 'Hydrogen');
+INSERT INTO public.elements VALUES (2, 'He', 'Helium');
+INSERT INTO public.elements VALUES (3, 'Li', 'Lithium');
+INSERT INTO public.elements VALUES (4, 'Be', 'Beryllium');
+INSERT INTO public.elements VALUES (5, 'B', 'Boron');
+INSERT INTO public.elements VALUES (6, 'C', 'Carbon');
+INSERT INTO public.elements VALUES (7, 'N', 'Nitrogen');
+INSERT INTO public.elements VALUES (8, 'O', 'Oxygen');
+INSERT INTO public.elements VALUES (9, 'F', 'Fluorine');
+INSERT INTO public.elements VALUES (10, 'Ne', 'Neon');
 
 
 --
 -- Data for Name: properties; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.properties VALUES (4, 1287, 2470, 1);
-INSERT INTO public.properties VALUES (3, 180.54, 1342, 1);
-INSERT INTO public.properties VALUES (8, -218, -183, 2);
-INSERT INTO public.properties VALUES (7, -210.1, -195.8, 2);
-INSERT INTO public.properties VALUES (6, 3550, 4027, 2);
-INSERT INTO public.properties VALUES (2, -272.2, -269, 2);
-INSERT INTO public.properties VALUES (1, -259.1, -252.9, 2);
-INSERT INTO public.properties VALUES (5, 2075, 4000, 3);
-INSERT INTO public.properties VALUES (9, -220, -188.1, 2);
-INSERT INTO public.properties VALUES (10, -248.6, -246.1, 2);
+INSERT INTO public.properties VALUES (4, 1287, 2470, 1, 9.0122);
+INSERT INTO public.properties VALUES (3, 180.54, 1342, 1, 6.94);
+INSERT INTO public.properties VALUES (8, -218, -183, 2, 15.999);
+INSERT INTO public.properties VALUES (7, -210.1, -195.8, 2, 14.007);
+INSERT INTO public.properties VALUES (6, 3550, 4027, 2, 12.011);
+INSERT INTO public.properties VALUES (2, -272.2, -269, 2, 4.0026);
+INSERT INTO public.properties VALUES (1, -259.1, -252.9, 2, 1.008);
+INSERT INTO public.properties VALUES (5, 2075, 4000, 3, 10.81);
+INSERT INTO public.properties VALUES (9, -220, -188.1, 2, 18.998);
+INSERT INTO public.properties VALUES (10, -248.6, -246.1, 2, 20.18);
 
 
 --
