@@ -29,7 +29,8 @@ app.use(helmet({
       baseUri: ["'self'"],
       frameAncestors: ["'none'"]
     }
-  }
+  },
+  referrerPolicy: { policy: 'same-origin' }
 }));
 
 app.use(express.json({ limit: '20kb' }));

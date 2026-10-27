@@ -88,7 +88,7 @@ class MemoryStore {
     const thread = this.findThread(board, threadId);
     if (!thread) return 'not found';
     thread.reported = true;
-    return 'success';
+    return 'reported';
   }
 
   async createReply(board, threadId, text, password) {
@@ -119,7 +119,8 @@ class MemoryStore {
     });
     if (index < 0) return 'reply not found';
     if (thread.replies[index].delete_password !== hashPassword(password)) return 'incorrect password';
-    thread.replies.splice(index, 1);
+    thread.replies[index].text = '[deleted]';
+    thread.replies[index].delete_password = '';
     return 'success';
   }
 
@@ -131,7 +132,7 @@ class MemoryStore {
     });
     if (!reply) return 'reply not found';
     reply.reported = true;
-    return 'success';
+    return 'reported';
   }
 }
 
@@ -194,7 +195,7 @@ class MongoStore {
     const thread = await this.findThread(board, threadId);
     if (!thread) return 'not found';
     await this.threads.updateOne({ _id: thread._id, board }, { $set: { reported: true } });
-    return 'success';
+    return 'reported';
   }
 
   async createReply(board, threadId, text, password) {
@@ -228,7 +229,10 @@ class MongoStore {
     });
     if (!reply) return 'reply not found';
     if (reply.delete_password !== hashPassword(password)) return 'incorrect password';
-    await this.threads.updateOne({ _id: thread._id, board }, { $pull: { replies: { _id: id } } });
+    await this.threads.updateOne(
+      { _id: thread._id, board, 'replies._id': id },
+      { $set: { 'replies.$.text': '[deleted]', 'replies.$.delete_password': '' } }
+    );
     return 'success';
   }
 
@@ -243,7 +247,7 @@ class MongoStore {
       { _id: thread._id, board, 'replies._id': id },
       { $set: { 'replies.$.reported': true } }
     );
-    return 'success';
+    return 'reported';
   }
 }
 

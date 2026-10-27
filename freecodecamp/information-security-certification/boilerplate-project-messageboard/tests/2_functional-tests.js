@@ -87,7 +87,7 @@ suite('Functional Tests', function () {
         .end(function (error, response) {
           if (error) return done(error);
           assert.equal(response.status, 200);
-          assert.equal(response.text, 'success');
+          assert.equal(response.text, 'reported');
           done();
         });
     });
@@ -150,7 +150,15 @@ suite('Functional Tests', function () {
         if (error) return done(error);
         assert.equal(response.status, 200);
         assert.equal(response.text, 'success');
-        done();
+        chai.request(server)
+          .get('/api/replies/' + board)
+          .query({ thread_id: replyThreadId })
+          .end(function (readError, readResponse) {
+            if (readError) return done(readError);
+            const deletedReply = readResponse.body.replies.find(function (reply) { return reply._id === replyId; });
+            assert.equal(deletedReply.text, '[deleted]');
+            done();
+          });
       });
   });
 
@@ -171,7 +179,7 @@ suite('Functional Tests', function () {
           .end(function (error, response) {
             if (error) return done(error);
             assert.equal(response.status, 200);
-            assert.equal(response.text, 'success');
+            assert.equal(response.text, 'reported');
             done();
           });
       });
