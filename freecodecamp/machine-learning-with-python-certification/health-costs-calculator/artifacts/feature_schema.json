@@ -1,0 +1,36 @@
+{
+  "columns": [
+    "age",
+    "bmi",
+    "children",
+    "sex_female",
+    "sex_male",
+    "smoker_no",
+    "smoker_yes",
+    "region_northeast",
+    "region_northwest",
+    "region_southeast",
+    "region_southwest"
+  ],
+  "numeric": [
+    "age",
+    "bmi",
+    "children"
+  ],
+  "categories": {
+    "sex": [
+      "female",
+      "male"
+    ],
+    "smoker": [
+      "no",
+      "yes"
+    ],
+    "region": [
+      "northeast",
+      "northwest",
+      "southeast",
+      "southwest"
+    ]
+  }
+}

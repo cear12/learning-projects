@@ -1,0 +1,20 @@
+{
+  "tensorflow_version": "2.20.0",
+  "seed": 42,
+  "dataset_sha256": "6f9588de10a0a8a1f2d1356468f2d21e62ab20b141f316d882fc9b4aa3f29938",
+  "dataset_rows": 1338,
+  "training_pool_rows": 1070,
+  "fitting_rows": 856,
+  "validation_rows": 214,
+  "test_rows": 268,
+  "input_features": 11,
+  "epochs_completed": 147,
+  "best_epoch": 97,
+  "best_validation_mae": 1512.404541015625,
+  "test_mae": 1785.4471435546875,
+  "test_mse": 26860350.0,
+  "test_rmse": 5182.697174252033,
+  "median_baseline_test_mae": 8454.3681640625,
+  "required_test_mae_below": 3500,
+  "passed_challenge": true
+}
