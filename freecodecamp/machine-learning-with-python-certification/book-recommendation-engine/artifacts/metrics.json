@@ -1,0 +1,16 @@
+{
+  "dataset_sha256": "adc7b47afb47c8e29e5f0b70a9816569b3367c5588064ba7a916f16e3ef5d060",
+  "pandas_version": "2.3.3",
+  "scikit_learn_version": "1.7.2",
+  "raw_books": 271379,
+  "raw_ratings": 1149780,
+  "filtered_ratings": 49781,
+  "matched_ratings": 49517,
+  "matrix_titles": 673,
+  "matrix_readers": 888,
+  "nonzero_ratings": 12469,
+  "metric": "cosine",
+  "algorithm": "brute",
+  "official_test_passed": true,
+  "all_five_distances_verified": true
+}
