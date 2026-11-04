@@ -4,7 +4,12 @@
 	"description": "InfoSec project for freeCodeCamp",
 	"scripts": {
 		"start": "node server.js",
-		"test": "cross-env NODE_ENV=test mocha --ui tdd tests/2_functional-tests.js --exit"
+		"test": "npm run test:unit && npm run test:functional",
+		"test:unit": "mocha --ui tdd \"tests/unit/**/*.js\" --exit",
+		"test:functional": "cross-env NODE_ENV=test mocha --ui tdd tests/2_functional-tests.js --exit",
+		"build:worker": "node scripts/build-worker.cjs",
+		"verify:live": "node scripts/verify-live.cjs",
+		"deploy": "wrangler deploy"
 	},
 	"dependencies": {
 		"cors": "^2.8.5",
@@ -16,12 +21,16 @@
 		"chai": "^4.5.0",
 		"chai-http": "^4.4.0",
 		"cross-env": "^7.0.3",
-		"mocha": "^12.0.3"
+		"mocha": "^12.0.3",
+		"wrangler": "4.157.0"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/freeCodeCamp/boilerplate-project-stockchecker"
+		"url": "https://github.com/cear12/learning-projects.git",
+		"directory": "freecodecamp/information-security-certification/boilerplate-project-stockchecker"
 	},
+	"engines": { "node": ">=24" },
+	"overrides": { "glob": "14.0.2", "minimatch": "11.0.1" },
 	"keywords": [
 		"node",
 		"express"

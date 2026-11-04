@@ -1,0 +1,16 @@
+{
+  "name": "cear12-stock-price-checker",
+  "main": "deploy/worker.mjs",
+  "compatibility_date": "2025-12-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "build": { "command": "node scripts/build-worker.cjs" },
+  "assets": { "directory": ".deploy/assets", "binding": "ASSETS", "run_worker_first": true },
+  "vars": { "NODE_ENV": "test" },
+  "d1_databases": [{
+    "binding": "LIKES",
+    "database_name": "cear12-stock-price-checker",
+    "database_id": "03823ba7-4f3c-421c-a874-f7363de923d9"
+  }]
+}

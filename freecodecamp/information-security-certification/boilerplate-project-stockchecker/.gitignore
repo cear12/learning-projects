@@ -1,2 +1,7 @@
 /node_modules/
 .env
+.data/
+.cache/
+.deploy/
+.wrangler/
+.dev.vars
