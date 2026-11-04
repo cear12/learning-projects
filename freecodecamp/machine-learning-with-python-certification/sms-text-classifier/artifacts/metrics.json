@@ -1,0 +1,55 @@
+{
+  "tensorflow_version": "2.20.0",
+  "seed": 42,
+  "dataset_hashes": {
+    "train-data.tsv": "7a72d271d37f9ee79e620df72731727abc9d950702a758525b5503a890c4d6d2",
+    "valid-data.tsv": "803f7f5908845838de3a42811256779b1eed026e94cde7a65fcaa94c8f260b8d"
+  },
+  "provided_training_rows": 4179,
+  "deduplicated_training_rows": 3935,
+  "fitting_rows": 3148,
+  "validation_rows": 787,
+  "provided_test_rows_seen_in_training_pool": 152,
+  "epochs_completed": 21,
+  "selected_epoch": 16,
+  "decision_threshold": 0.5,
+  "provided_test": {
+    "rows": 1392,
+    "accuracy": 0.9791666666666666,
+    "spam_precision": 0.9247311827956989,
+    "spam_recall": 0.9197860962566845,
+    "spam_f1": 0.9222520107238605,
+    "confusion_matrix": [
+      [
+        1191,
+        14
+      ],
+      [
+        15,
+        172
+      ]
+    ]
+  },
+  "novel_unique_test": {
+    "rows": 1221,
+    "accuracy": 0.9770679770679771,
+    "spam_precision": 0.8978102189781022,
+    "spam_recall": 0.8978102189781022,
+    "spam_f1": 0.8978102189781022,
+    "confusion_matrix": [
+      [
+        1070,
+        14
+      ],
+      [
+        14,
+        123
+      ]
+    ]
+  },
+  "provided_test_pr_auc": 0.9753673672676086,
+  "always_ham_baseline_accuracy": 0.8656609195402298,
+  "official_examples_correct": 7,
+  "official_examples_total": 7,
+  "passed_challenge": true
+}

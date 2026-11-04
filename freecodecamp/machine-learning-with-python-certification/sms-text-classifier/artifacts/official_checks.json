@@ -1,0 +1,37 @@
+[
+  {
+    "expected": "ham",
+    "spam_score": 3.2930409361142665e-05,
+    "predicted": "ham"
+  },
+  {
+    "expected": "spam",
+    "spam_score": 0.9991226196289062,
+    "predicted": "spam"
+  },
+  {
+    "expected": "ham",
+    "spam_score": 8.167798659997061e-05,
+    "predicted": "ham"
+  },
+  {
+    "expected": "spam",
+    "spam_score": 0.9598622918128967,
+    "predicted": "spam"
+  },
+  {
+    "expected": "spam",
+    "spam_score": 0.999999463558197,
+    "predicted": "spam"
+  },
+  {
+    "expected": "ham",
+    "spam_score": 0.0037960801273584366,
+    "predicted": "ham"
+  },
+  {
+    "expected": "ham",
+    "spam_score": 0.0018227094551548362,
+    "predicted": "ham"
+  }
+]
